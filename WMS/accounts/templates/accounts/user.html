@@ -1,0 +1,31 @@
+{%  extends 'accounts/main.html' %}
+{% block content %}
+{%  include 'accounts/status.html' %}
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Product</th>
+					<th>Note</th>
+					<th>Date Ordered</th>
+					<th>Status</th>
+				</tr>
+
+				{% for query in querys %}
+
+				<tr>
+					<td>{{query.product}}</td>
+					<td>{{query.note}}</td>
+					<td>{{query.date_created}}</td>
+					<td>{{query.status}}</td>
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}
